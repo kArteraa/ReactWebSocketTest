@@ -9,6 +9,7 @@ const WebSocket = () => {
     const [messageHistory, setMessageHistory] = useState(["asfasf", "asf"]);
 
     useEffect(() => {
+        console.log(lastMessage);
         if (lastMessage !== null) {
             setMessageHistory((prev) => prev.concat(lastMessage));
         }
