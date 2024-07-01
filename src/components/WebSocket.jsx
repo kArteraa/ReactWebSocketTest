@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 
 const WebSocket = ({id}) => {
-    const [socketUrl, setSocketUrl] = useState(`ws://localhost:8000/ws/json/${id}`);
+    const [socketUrl, setSocketUrl] = useState(`ws://localhost:8000/chat/ws/json/${id}`);
     const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
     const [text,setText] = useState("");
 
