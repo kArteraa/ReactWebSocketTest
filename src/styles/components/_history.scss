@@ -1,0 +1,50 @@
+.history {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.history__ui {
+    display: flex;
+}
+
+.history__input {
+    background-color: $white;
+    color:$black;
+    border-radius: $border-radius;
+
+    padding: .5rem 1rem;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.history__btn {
+    @include button($blue,$white,1.2rem,500);
+    margin-left: 1rem;
+}
+
+.history__list {
+    margin-top: 3rem;
+}
+
+.history__item {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.history__list__title {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.history__item__date {
+    margin-right: 1rem;
+}

@@ -1,0 +1,22 @@
+@mixin button($background,$fontColor,$fontSize,$fontWeight) {
+
+    background-color: $background;
+    color: $fontColor;
+
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+
+    border-radius: $border-radius;
+
+    padding: .6rem 1rem;
+
+    transition: background-color .2s ease-in-out;
+
+    &:hover {
+        background-color: darken($background,10%);
+    }
+
+    &:active {
+        background-color: darken($background,15%);
+    }
+}
