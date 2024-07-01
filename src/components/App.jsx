@@ -1,9 +1,12 @@
 import WebSocket from "./WebSocket";
 
 const App = () => {
+
+	const userId = Date.now();
+
     return (
 		<div>
-			<WebSocket />
+			<WebSocket id={userId} />
 		</div>
     );
 };
