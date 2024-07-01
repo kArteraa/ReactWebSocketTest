@@ -2,14 +2,13 @@ import { useState, useEffect } from "react";
 import useWebSocket from "react-use-websocket";
 
 const WebSocket = () => {
-    const [socketUrl, setSocketUrl] = useState("ws://localhost:8000/chat/ws/1");
+    const [socketUrl, setSocketUrl] = useState(`ws://localhost:8000/chat/ws/${Date.now()}`);
     const { sendMessage, lastMessage, readyState } = useWebSocket(socketUrl);
     const [text,setText] = useState("");
 
     const [messageHistory, setMessageHistory] = useState(["asfasf", "asf"]);
 
     useEffect(() => {
-        console.log(lastMessage);
         if (lastMessage !== null) {
             setMessageHistory((prev) => prev.concat(lastMessage));
         }
@@ -41,7 +40,7 @@ const WebSocket = () => {
 
                         return (
                             <h1 className="history__item" key={idx}>
-                                <span className="history__item__message">{message}</span>
+                                <span className="history__item__message">{message.data}</span>
                             </h1>
                         );
                     })}
